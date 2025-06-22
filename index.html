@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Сайт с нуля под ключ</title>
+</head>
+
+<body>
+  <nav>
+    <div class="nav-container">
+      <div class="logo">Мария Яката</div>
+      <ul class="nav-links">
+        <li><a href="#hero">Начало</a></li>
+        <li><a href="#about"><span class="pink">#</span>О себе</a></li>
+        <li><a href="#skills"><span class="pink">#</span>Навыки</a></li>
+        <li><a href="#portfolio"><span class="pink">#</span>Портфолио</a></li>
+        <li><a href="#services"><span class="pink">#</span>Услуги</a></li>
+        <li><a href="#contact"><span class="pink">#</span>Контакты</a></li>
+      </ul>
+    </div>
+  </nav>
+   <!-- Enhanced Progress Slider -->
+    <div class="progress-container">
+        <div class="progress-item active" data-section="hero">
+            <div class="progress-number"><span>01</span></div>
+            <div class="progress-tooltip">Начало</div>
+        </div>
+        <div class="progress-line"></div>
+        <div class="progress-item" data-section="services">
+            <div class="progress-number"><span>02</span></div>
+            <div class="progress-tooltip">О себе</div>
+        </div>
+        <div class="progress-line"></div>
+        <div class="progress-item" data-section="portfolio">
+            <div class="progress-number"><span>03</span></div>
+            <div class="progress-tooltip">Навыки</div>
+        </div>
+        <div class="progress-line"></div>
+        <div class="progress-item" data-section="pricing">
+            <div class="progress-number"><span>04</span></div>
+            <div class="progress-tooltip">Тарифы</div>
+        </div>
+        <div class="progress-line"></div>
+        <div class="progress-item" data-section="contact">
+            <div class="progress-number"><span>05</span></div>
+            <div class="progress-tooltip">Контакты</div>
+        </div>
+    </div>
+  <section class="hero">
+    <canvas id="codeCanvas"></canvas>
+    <div class="content">
+      <div class="hero-descr">
+        <h1>Создание и поддержка сайтов для вашего бизнеса</h1>
+        <p>Оперативная разработка качественных сайтов с акцентом на производительность и безопасность.</p>
+        <button class="hero-btn">Оставить заявку</button>
+      </div>
+      <div class="hero-image">
+      <img src="public/images/avatar1.png" class="hero-image_img">
+      <div class="media"></div>
+      </div>
+      <div class="citata">
+        <div class="hero-name">
+          <p class="quote-text">
+            Некоторые вещи <span class="pink">лучше выглядят сделанными</span>, чем описанными.
+          </p>
+        </div>
+        <p class="quote-name">Дэвид Томас</p>
+      </div>
+      <div class="roadmap">
+      </hr>
+      <div>rgdfhfdhfdhdfdfdhfdh</div>
+      </div>
+    </div>
+  </section>
+  <script>
+        // Enhanced Progress slider functionality
+        function updateProgressSlider() {
+            const sections = document.querySelectorAll('.section');
+            const progressItems = document.querySelectorAll('.progress-item');
+            const scrollPosition = window.scrollY + window.innerHeight / 2;
+
+            sections.forEach((section, index) => {
+                const sectionTop = section.offsetTop;
+                const sectionBottom = sectionTop + section.offsetHeight;
+                
+                if (scrollPosition >= sectionTop && scrollPosition <= sectionBottom) {
+                    // Remove active class from all items
+                    progressItems.forEach(item => item.classList.remove('active'));
+                    // Add active class to current item and all previous items
+                    for (let i = 0; i <= index; i++) {
+                        progressItems[i].classList.add('active');
+                    }
+                }
+            });
+        }
+
+        // Smooth scroll to section when clicking progress item
+        document.querySelectorAll('.progress-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const sectionId = item.getAttribute('data-section');
+                const section = document.getElementById(sectionId);
+                section.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Update progress on scroll
+        window.addEventListener('scroll', updateProgressSlider);
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+</script>
+  <script type="module" src="/src/js/main.js"></script>
+</body>
+
+</html>
