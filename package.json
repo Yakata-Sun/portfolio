@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "gitadd": "git add . && git commit -m 'update' && git push"
   },
   "devDependencies": {
     "sass": "^1.89.2",

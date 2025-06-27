@@ -1,0 +1,53 @@
+.skills {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 70px 2rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-areas: 
+  "head head head .... ...."
+  "nice nice type type type";
+  row-gap: 40px;
+}
+
+.headSkills {
+  grid-area: head;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: start;
+  align-items: center;
+  column-gap: 20px;
+}
+.headSkills .lineSection {
+  justify-self: flex-start;
+}
+
+.backImg{
+  grid-area: nice;
+  background: url('public/images/backImg.png') center center/cover no-repeat;
+  opacity: 0.5;
+}
+.typeSkills {
+  grid-area: type;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:flex-end;
+  gap: 15px;
+}
+
+.cardSkilsRow {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+}
+.cardSkils {
+  width: 180px;
+  
+}
+.cardSkils h2, .cardSkils p {
+  padding: 10px;
+  border: 1px solid var(--neon-dark);
+}
+.cardSkils h2 {
+  border-bottom: none;
+}
