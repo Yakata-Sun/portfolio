@@ -3,7 +3,7 @@ export function backgroundCanvas() {
   const canvas = document.getElementById('codeCanvas');
   const ctx = canvas.getContext('2d');
 
-  const characters = 'Javascript document.getElementById ctx.fillRect(0, 0, canvas.width, canvas.height)';
+  const characters = 'Javascript ctx.fillStyle = rgba(250, 250, 250, 0.05);  ct(0, 0, canvas.width, canvas.height) const text = characters.charAt(Math.floor(Math.random() * characters.length));';
   const fontSize = 16; // Размер шрифта
   let columns; // Количество колонок
   let drops;   // Массив позиций капель

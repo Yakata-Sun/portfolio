@@ -13,12 +13,29 @@ h1{
   font-size: 32px;
   letter-spacing: 120%;
 }
+h2{
+  margin: 0;
+  padding: 0;
+}
+h3 {
+  font-size: 24px;
+  letter-spacing: 120%;
+}
 p {
   font-size: 16px;
 }
 .pink {
-  color: var(--neon-pink)
+  color: var( --neon-pink);
 }
-.blue {
-  color: var(--neon-blue)
+.blue{
+  color: var( --neon-blue);
+}
+.lineSection {
+  height: 2px;
+  width: 300px;
+  background-color: var(--neon-blue);
+
+}
+section{
+  margin: 0 auto;
 }
