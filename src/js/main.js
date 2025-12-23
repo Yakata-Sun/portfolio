@@ -1,9 +1,11 @@
-import '../scss/style.scss'
+import '../scss/style.scss';
 import { backgroundCanvas } from './backgroundCanvas.js';
+import ThemeSwitch from '../js/theme.js';
 import modal from './modal.js';
 import order from './order.js';
 
 window.addEventListener('DOMContentLoaded', ()=>{
+  ThemeSwitch();
   modal();
   backgroundCanvas();
   order();

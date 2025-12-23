@@ -19,18 +19,24 @@
       </label>
       <ul class="nav-links">
         <li><a href="#hero"><span>#</span>Начало</a></li>
-        <li><a href="#about"><span>#</span>О себе</a></li>
         <li><a href="#skills"><span>#</span>Навыки</a></li>
         <li><a href="#portfolio"><span>#</span>Портфолио</a></li>
         <li><a href="#services"><span>#</span>Услуги</a></li>
+        <li><a href="#about"><span>#</span>О себе</a></li>
         <li><a href="#contact"><span>#</span>Контакты</a></li>
+        <li class="theme-switch-wrapper">
+          <label class="theme-switch">
+            <input type="checkbox" id="theme-toggle">
+            <span class="slider"></span>
+          </label>
+        </li>
       </ul>
     </div>
   </nav>
   <div class="media">
     <div class="media-line"></div>
-    <a href=""><img src="public/images/icons/github.png" class="media-icons" alt="GitHub"></a>
-    <a href=""><img src="public/images/icons/telegram.png" class="media-icons" alt="Telegram"></a>
+    <a href=""><img src="./public/images/icons/github.png" class="media-icons" alt="GitHub"></a>
+    <a href=""><img src="./public/images/icons/telegram.png" class="media-icons" alt="Telegram"></a>
   </div>
   <section class="hero">
     <canvas id="codeCanvas"></canvas>
@@ -43,56 +49,120 @@
         <button class="hero-btn" id="btnHero">Оставить заявку</button>
       </div>
       <div class="hero-image">
-        <img src="public/images/avatar1.png" class="hero-image_img">
+        <img src="./public/images/avatar1.png" class="hero-image_img">
 
       </div>
-      <div class="citata">
+    </div>
+  </section>
+          <section class="citata">
         <div class="hero-name">
           <p class="quote-text">
             Некоторые вещи <span class="blue">лучше выглядят сделанными</span>, чем описанными.
           </p>
+          <p class="quote-name">Дэвид Томас</p>
         </div>
-        <p class="quote-name">Дэвид Томас</p>
-      </div>
-
-    </div>
-  </section>
-
+        
+      </section>
   <section class="skills">
     <div class="headSkills">
-<h2><span class="blue">#</span> Мои компетенции</h2>
-<div class="lineSection"></div>
+      <h2><span class="blue">#</span> Мои компетенции</h2>
+      <div class="lineSection"></div>
     </div>
     <div class="backImg"></div>
     <div class="typeSkills">
       <div class="cardSkilsRow">
         <div class="cardSkils">
-        <h2>Инструменты Web-разработки</h2>
-        <p>VS Code / Vite / Webpack / Git / GitHub / Open Server</p>
-      </div>
-       <div class="cardSkils">
-        <h2>Нейросети</h2>
-        <p>ChatGPT / Claude / Gemini / MidJourney / Ideogram и другие</p>
-      </div>
+          <h2>Инструменты Web-разработки</h2>
+          <p>VS Code / Vite / Gulp / GitHub / Open Server</p>
+        </div>
+
       </div>
       <div class="cardSkilsRow">
         <div class="cardSkils">
-        <h2>Frontend-разработка</h2>
-        <p>HTML5 / CSS3 / SCSS-SASS-Less / ES6+ / Bootstrap / React / Redux / Jest / Canvas / Three.js / jQuery / Grammy.js</p>
-      </div>
+          <h2>Frontend-разработка</h2>
+          <p>Javascript ES6+ / React.js / Canvas / HTML5 / CSS3 / SCSS-SASS-Less / Bootstrap / jQuery </p>
+        </div>
         <div class="cardSkils">
-        <h2>CMS-разработка</h2>
-        <p>WordPress / Cоздание тем WordPress / Верстка</p>
-      </div>
+          <h2>Нейросети</h2>
+          <p>ChatGPT / Claude / Qwen / Gemini / MidJourney / Ideogram и другие</p>
+        </div>
       </div>
       <div class="cardSkilsRow">
-      <div class="cardSkils">
-        <h2>SEO-аналитика и маркетинг</h2>
-        <p>Google Tools / Google Analytics / Google Trends / Yandex.Wordstat  / Яндекс.Директ</p>
+        <div class="cardSkils">
+          <h2>CMS-разработка</h2>
+          <p>WordPress / Elementor / Gravity Forms / WooCommerce / Интеграция вашего сайта с WordPress</p>
+        </div>
+        <div class="cardSkils">
+          <h2>SEO-аналитика и маркетинг</h2>
+          <p>Google Tools / Google Analytics / Google Trends / Yandex.Wordstat / Яндекс.Директ</p>
+        </div>
       </div>
-      <div class="cardSkils">
-        <h2>Разное</h2>
-        <p>Figma / Gimp</p>
+  </section>
+  <section class="projects">
+    <div class="headSkills">
+      <h2><span class="blue">#</span> Мои проекты</h2>
+      <div class="lineSection"></div>
+    </div>
+<!--     <div class="moreProject">
+      <div class="lineMore"></div>
+      <input type="checkbox" id="moreWatch">
+      <label for="moreWatch" class="more">
+        <p>Показать больше</p>
+      </label>
+      <div class="anyMore">
+        <div class="card">
+          <img src="" alt="">
+          <div class="stack">HTML, SASS, Javascript, PHP</div>
+          <h2>Многостраничный сайт</h2>
+          <p>Каталоги товаров и услуг, информационный блог, обратная связь</p>
+          <div class="links">
+            <a href="https://novosvobodnaya.ru/" class="button">Посмотреть</a>
+            <a href="" class="button">GitHub</a>
+          </div>
+        </div>
+        <div class="card">
+          <img src="" alt="">
+          <div class="stack">Javascript ES6+</div>
+          <h2>UI библиотека на нативном JS</h2>
+          <p>Все необходимые компоненты для интерактивного сайта</p>
+          <a href="" class="button">GitHub</a>
+        </div>
+        <div class="card">
+          <img src="" alt="">
+          <div class="stack">React.js</div>
+          <h2>Сервис для транспонирования мелодий</h2>
+          <p>Смена тональности мелодии с объяснением, а после авторизации с сохранением</p>
+          <a href="" class="button">Посмотреть</a>
+          <a href="" class="button">GitHub</a>
+        </div>
+      </div>
+      </label>
+    </div> -->
+    <div class="cardProjects">
+      <div class="card">
+        <img src="./public/images/novosvobodnayaScreen.png" alt="">
+        <div class="stack">HTML, SASS, Javascript, PHP</div>
+        <h2>Многостраничный сайт</h2>
+        <p>Каталоги товаров и услуг, информационный блог, обратная связь</p>
+        <div class="links">
+          <a href="https://novosvobodnaya.ru/" class="button">Посмотреть</a>
+          <a href="" class="button">GitHub</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="" alt="">
+        <div class="stack">Javascript ES6+</div>
+        <h2>UI библиотека на нативном JS</h2>
+        <p>Все необходимые компоненты для интерактивного сайта</p>
+        <a href="" class="button">GitHub</a>
+      </div>
+      <div class="card">
+        <img src="" alt="">
+        <div class="stack">React.js</div>
+          <h2>Сервис для транспонирования мелодий</h2>
+          <p>Смена тональности мелодии с объяснением, а после авторизации с сохранением</p>
+        <a href="" class="button">Посмотреть</a>
+        <a href="" class="button">GitHub</a>
       </div>
     </div>
   </section>
@@ -128,7 +198,7 @@
       </div>
       <button type="submit" class="submit-btn" id="btnOrder">Отправить заявку</button>
     </form>
-  </div>
+    </div>
   </section>
 
   <div class="modal" id="newOrder">
