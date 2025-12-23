@@ -4,9 +4,9 @@
   padding: 70px 2rem;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-areas: 
-  "head head head .... ...."
-  "nice nice type type type";
+  grid-template-areas:
+    "head head head .... ...."
+    "nice nice type type type";
   row-gap: 40px;
 }
 
@@ -18,20 +18,16 @@
   align-items: center;
   column-gap: 20px;
 }
+
 .headSkills .lineSection {
   justify-self: flex-start;
 }
 
-.backImg{
-  grid-area: nice;
-  background: url('public/images/backImg.png') center center/cover no-repeat;
-  opacity: 0.5;
-}
 .typeSkills {
   grid-area: type;
   display: flex;
   flex-wrap: wrap;
-  justify-content:flex-end;
+  justify-content: flex-end;
   gap: 15px;
 }
 
@@ -40,14 +36,343 @@
   flex-direction: column;
   row-gap: 15px;
 }
+
 .cardSkils {
   width: 180px;
-  
+
 }
-.cardSkils h2, .cardSkils p {
+
+.cardSkils h2,
+.cardSkils p {
   padding: 10px;
-  border: 1px solid var(--color-text-primary);
 }
+
 .cardSkils h2 {
   border-bottom: none;
+}
+
+/* Современная диаграмма компетенций */
+.skillsDiagram {
+  grid-area: nice;
+  position: relative;
+  padding: 20px;
+  width: 100%;
+  height: 400px;
+  margin: 40px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* Анимация пульсации для центрального узла */
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Анимация появления линий */
+@keyframes drawLine {
+  from {
+    stroke-dashoffset: 1000;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Анимация появления узлов */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Всплывающая подсказка */
+.tooltip,
+.cardSkils {
+  background: rgba(30, 30, 30, 0.98);
+  border: 2px solid var(--neon-blue);
+  border-radius: 8px;
+  padding: 15px;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
+  max-width: 280px;
+  box-shadow: 0 8px 24px rgba(187, 134, 252, 0.4);
+}
+
+.tooltip {
+  position: absolute;
+  opacity: 0;
+}
+
+.tooltip.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tooltip h3,
+.cardSkils h2 {
+  margin: 0 0 10px 0;
+  color: var(--neon-pink);
+  font-size: 1.1rem;
+  border-bottom: 1px solid var(--neon-blue);
+  padding-bottom: 8px;
+}
+
+.tooltip ul,
+.cardSkils ul {
+  margin: 0;
+  padding-left: 20px;
+  list-style: none;
+}
+
+.tooltip li,
+.cardSkils li {
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  margin: 6px 0;
+  padding-left: 15px;
+  position: relative;
+}
+
+.tooltip li:before,
+.cardSkils li:before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--neon-blue);
+}
+
+@media (max-width: 768px) {
+  .skills {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "head"
+      "nice"
+      "type";
+  }
+
+  .typeSkills {
+    justify-content: center;
+  }
+
+  .tooltip {
+    max-width: 200px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Central hub */
+.radial-center {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(135deg, #BB86FC, #FF8A80);
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #E0E0E0;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+  box-shadow: 0 0 12px rgba(187, 134, 252, 0.6);
+  z-index: 3;
+  animation: pulse 3s ease-in-out infinite, fadeIn 1s ease-out forwards;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Radial sectors container */
+.radial-diagram {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.radial-sector {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  top: 0;
+  left: 0;
+  /* Важно: transform-origin остаётся центром круга */
+  transform-origin: 160px 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  animation: fadeInSector 0.6s ease-out forwards;
+  /* Никакого padding — текст позиционируем отдельно */
+}
+
+/* Убираем clip-path из общего класса — задаём в каждом секторе */
+.radial-sector span {
+  position: absolute;
+  color: #E0E0E0;
+  font-size: 14px;
+  font-weight: bold;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+  white-space: nowrap;
+  pointer-events: none; /* Чтобы span не мешал клику */
+}
+
+/* Сектор 1: 0° → 60° */
+.sector-1 {
+  background: linear-gradient(135deg, #BB86FC, #FF8A80);
+  clip-path: polygon(160px 160px, 320px 160px, 240px 24px);
+  animation-delay: 0.2s;
+}
+.sector-1 span {
+  transform: translate(80px, -40px) rotate(-30deg);
+}
+
+/* Сектор 2: 60° → 120° */
+.sector-2 {
+  background: linear-gradient(135deg, #FF8A80, #BB86FC);
+  clip-path: polygon(160px 160px, 240px 24px, 80px 24px);
+  animation-delay: 0.4s;
+}
+.sector-2 span {
+  transform: translate(0px, -70px) rotate(-90deg);
+}
+
+/* Сектор 3: 120° → 180° */
+.sector-3 {
+  background: linear-gradient(135deg, #80CBC4, #BB86FC);
+  clip-path: polygon(160px 160px, 80px 24px, 0px 160px);
+  animation-delay: 0.6s;
+}
+.sector-3 span {
+  transform: translate(-80px, -40px) rotate(-150deg);
+}
+
+/* Сектор 4: 180° → 240° */
+.sector-4 {
+  background: linear-gradient(135deg, #FFD54F, #FF8A80);
+  clip-path: polygon(160px 160px, 0px 160px, 80px 296px);
+  animation-delay: 0.8s;
+}
+.sector-4 span {
+  transform: translate(-80px, 40px) rotate(150deg);
+}
+
+/* Сектор 5: 240° → 300° */
+.sector-5 {
+  background: linear-gradient(135deg, #A5D6A7, #80CBC4);
+  clip-path: polygon(160px 160px, 80px 296px, 240px 296px);
+  animation-delay: 1.0s;
+}
+.sector-5 span {
+  transform: translate(0px, 70px) rotate(90deg);
+}
+
+/* Сектор 6: 300° → 360° */
+.sector-6 {
+  background: linear-gradient(135deg, #CE93D8, #A5D6A7);
+  clip-path: polygon(160px 160px, 240px 296px, 320px 160px);
+  animation-delay: 1.2s;
+}
+.sector-6 span {
+  transform: translate(80px, 40px) rotate(30deg);
+}
+
+/* Для мобильной версии — масштабируем координаты */
+@media (max-width: 768px) {
+  .radial-sector {
+    width: 260px;
+    height: 260px;
+    transform-origin: 130px 130px;
+  }
+
+  /* Пересчитанные координаты для R = 130px */
+  .sector-1 { clip-path: polygon(130px 130px, 260px 130px, 195px 17px); }
+  .sector-2 { clip-path: polygon(130px 130px, 195px 17px, 65px 17px); }
+  .sector-3 { clip-path: polygon(130px 130px, 65px 17px, 0px 130px); }
+  .sector-4 { clip-path: polygon(130px 130px, 0px 130px, 65px 243px); }
+  .sector-5 { clip-path: polygon(130px 130px, 65px 243px, 195px 243px); }
+  .sector-6 { clip-path: polygon(130px 130px, 195px 243px, 260px 130px); }
+
+  .sector-1 span { transform: translate(65px, -30px) rotate(-30deg); font-size: 12px; }
+  .sector-2 span { transform: translate(0px, -50px) rotate(-90deg); font-size: 12px; }
+  .sector-3 span { transform: translate(-65px, -30px) rotate(-150deg); font-size: 12px; }
+  .sector-4 span { transform: translate(-65px, 30px) rotate(150deg); font-size: 12px; }
+  .sector-5 span { transform: translate(0px, 50px) rotate(90deg); font-size: 12px; }
+  .sector-6 span { transform: translate(65px, 30px) rotate(30deg); font-size: 12px; }
+}
+
+@keyframes fadeInSector {
+  from {
+    opacity: 0;
+    transform: rotate(var(--start-angle, 0deg)) scale(0.8);
+  }
+
+  to {
+    opacity: 1;
+    transform: rotate(var(--start-angle, 0deg)) scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .skillsDiagram {
+    height: 320px;
+  }
+
+  .radial-diagram {
+    width: 260px;
+    height: 260px;
+  }
+
+  .radial-sector {
+    width: 130px;
+    height: 130px;
+    transform-origin: 130px 130px;
+  }
+
+  .radial-center {
+    width: 100px;
+    height: 100px;
+    font-size: 12px;
+  }
 }

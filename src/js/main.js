@@ -1,13 +1,15 @@
 import '../scss/style.scss';
 import { backgroundCanvas } from './backgroundCanvas.js';
 import ThemeSwitch from '../js/theme.js';
+import toolType from '../js/skillsData.js';
 import modal from './modal.js';
 import order from './order.js';
 
 window.addEventListener('DOMContentLoaded', ()=>{
-  ThemeSwitch();
   modal();
   backgroundCanvas();
+  ThemeSwitch();
+  toolType();
   order();
 })
 

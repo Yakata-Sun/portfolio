@@ -68,12 +68,75 @@
       <h2><span class="blue">#</span> Мои компетенции</h2>
       <div class="lineSection"></div>
     </div>
-    <div class="backImg"></div>
+<div class="skillsDiagram">
+  <!-- Tooltip -->
+  <div class="tooltip" id="tooltip">
+    <h3 id="tooltipTitle"></h3>
+    <ul id="tooltipList"></ul>
+  </div>
+
+  <!-- Центральная "Full Stack" метка -->
+  <div class="radial-center">
+    <span>Full Stack</span>
+    <span>Developer</span>
+  </div>
+
+  <!-- Круговая диаграмма: 6 секторов -->
+  <div class="radial-diagram">
+    <!-- Frontend -->
+    <div class="radial-sector sector-1"
+         data-title="Frontend"
+         data-skills="JavaScript ES6+, React.js, HTML5, CSS3, SCSS/SASS/Less, Bootstrap, jQuery">
+      <span>Frontend</span>
+    </div>
+
+    <!-- Инструменты -->
+    <div class="radial-sector sector-2"
+         data-title="Инструменты"
+         data-skills="VS Code, Vite, Gulp, GitHub, Open Server">
+      <span>Инструменты</span>
+    </div>
+
+    <!-- Нейросети -->
+    <div class="radial-sector sector-3"
+         data-title="Нейросети"
+         data-skills="ChatGPT, Claude, Qwen, Gemini, MidJourney, Ideogram">
+      <span>Нейросети</span>
+    </div>
+
+    <!-- SEO -->
+    <div class="radial-sector sector-4"
+         data-title="SEO"
+         data-skills="Google Tools, Google Analytics, Google Trends, Yandex.Wordstat, Яндекс.Директ">
+      <span>SEO</span>
+    </div>
+
+    <!-- CMS -->
+    <div class="radial-sector sector-5"
+         data-title="CMS"
+         data-skills="WordPress, Elementor, Gravity Forms, WooCommerce, Интеграция с WP">
+      <span>CMS</span>
+    </div>
+
+    <!-- Backend / Tools -->
+    <div class="radial-sector sector-6"
+         data-title="Backend / Tools"
+         data-skills="Node.js, Express, MongoDB, Git, Docker, REST API">
+      <span>Tools</span>
+    </div>
+  </div>
+</div>
     <div class="typeSkills">
       <div class="cardSkilsRow">
         <div class="cardSkils">
           <h2>Инструменты Web-разработки</h2>
-          <p>VS Code / Vite / Gulp / GitHub / Open Server</p>
+          <ul>
+            <li>VS Code</li>
+            <li>Vite</li>
+            <li>Gulp</li>
+            <li>GitHub</li>
+            <li>Open Server</li>
+</ul>
         </div>
 
       </div>
