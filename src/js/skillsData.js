@@ -1,10 +1,10 @@
 const toolType = () => {
- const tooltip = document.getElementById('tooltip');
+  const tooltip = document.getElementById('tooltip');
   const tooltipTitle = document.getElementById('tooltipTitle');
   const tooltipList = document.getElementById('tooltipList');
   const sectors = document.querySelectorAll('.radial-sector');
 
-  sectors.forEach(sector => {
+  sectors.forEach((sector) => {
     sector.addEventListener('mouseenter', function (e) {
       const title = this.getAttribute('data-title') || 'Компетенции';
       const skills = this.getAttribute('data-skills') || '';
@@ -12,7 +12,7 @@ const toolType = () => {
       tooltipTitle.textContent = title;
       tooltipList.innerHTML = '';
       if (skills) {
-        skills.split(',').forEach(skill => {
+        skills.split(',').forEach((skill) => {
           const li = document.createElement('li');
           li.textContent = skill.trim();
           tooltipList.appendChild(li);

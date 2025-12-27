@@ -1,62 +1,75 @@
-    
-    *{margin:0;padding:0;box-sizing:border-box}
-    
-    body {
-      font-family: "AnonymousPro-Regular", sans-serif;
-      background: var(--bg-primary);
-      color: var(--text-primary);
-      line-height: 1.6;
-      overflow-x: hidden;
-      transition: background 0.3s ease, color 0.3s ease;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+}
 
-    h1,
-    h2,
-    h3 {
-      font-family: "JetBrains_Mono";
-      line-height: 1.1;
-      color: var(--text-primary)
-    }
+body {
+  font-family: 'AnonymousPro-Regular', sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
 
-    h1 {
-      font-size: 32px;
-      letter-spacing: 120%
-    }
+h1,
+h2,
+h3 {
+  font-family: 'JetBrains_Mono', monospace;
+  line-height: 1.1;
+  color: var(--text-primary);
+}
 
-    h2 {
-      margin: 0;
-      padding: 0
-    }
+h1 {
+  font-size: 32px;
+  letter-spacing: 120%;
+  font-weight: 600;
+}
 
-    h3 {
-      font-size: 24px;
-      letter-spacing: 120%
-    }
+h2, h3 {
+  color: var(--neon-pink);
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
 
-    p {
-      font-size: 16px
-    }
- button {
-  color: var(--text-primary)
- }
-    .pink {
-      color: var(--neon-pink)
-    }
+h3 {
+  font-size: 24px;
+  letter-spacing: 120%;
+}
 
-    .blue {
-      color: var(--neon-blue)
-    }
+p {
+  font-size: 16px;
+}
+button {
+  color: var(--text-primary);
+}
+.pink {
+  color: var(--neon-pink);
+}
 
-    .lineSection {
-      height: 2px;
-      width: 300px;
-      background-color: var(--neon-blue)
-    }
+.blue {
+  color: var(--neon-blue);
+}
 
-    section {
-      margin: 0 auto
-    }
+.lineSection {
+  height: 2px;
+  width: 300px;
+  background-color: var(--neon-blue);
+}
 
-    a {
-      text-decoration: none
-    }
+section {
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}

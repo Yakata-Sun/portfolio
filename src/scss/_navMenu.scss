@@ -6,7 +6,7 @@ nav {
   backdrop-filter: blur(10px);
   z-index: 1000;
   padding: 1rem 0;
-  box-shadow: var(--nav-shadow)
+  box-shadow: var(--nav-shadow);
 }
 
 .nav-container {
@@ -21,7 +21,7 @@ nav {
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
-  background: linear-gradient(45deg, var(--text-primary), var(--neon-blue), var(--neon-pink));
+  background: linear-gradient(45deg, var(--text-primary), var(--neon-pink), var(--neon-blue));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -53,7 +53,7 @@ nav {
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(45deg, var(--text-primary), var(--neon-blue), var(--neon-pink));
+  background: var(--accent-gradient);
   transition: width 0.3s ease;
 }
 
@@ -61,12 +61,11 @@ nav {
   width: 100%;
 }
 .nav-links a span {
-  color: var(--neon-blue);
+  color: var(--neon-pink);
 }
 .nav-links a:hover span {
   color: var(--text-primary);
 }
-
 
 .hamburger {
   display: none;
@@ -80,13 +79,13 @@ nav {
   .hamburger {
     display: block;
     position: fixed;
-    top: calc(2.5rem  / 2);
+    top: calc(2.5rem / 2);
     left: 20px;
     width: 40px;
     cursor: pointer;
     border: none;
     padding: 5px;
-    background-color: var(--color-text-primary);
+    background-color: var(--nav-bg);
     z-index: 1001;
   }
 
@@ -96,8 +95,8 @@ nav {
     height: 2px;
     background-color: #f0f0f0;
     margin: 5px 0;
-    -webkit-transition: .5s all;
-    transition: .5s all;
+    -webkit-transition: 0.5s all;
+    transition: 0.5s all;
   }
 
   /* Анимация гамбургера при активном состоянии */
@@ -123,12 +122,12 @@ nav {
   .nav-links {
     display: none;
     flex-direction: column;
-    -webkit-transition: left .3s ease;
-    transition: left .3s ease;
+    -webkit-transition: left 0.3s ease;
+    transition: left 0.3s ease;
     z-index: 1000;
     border-radius: 5px;
-    
-    gap:5px;
+
+    gap: 5px;
   }
   #toggle:checked ~ .hamburger {
     background: linear-gradient(135deg, var(--text-primary), var(--neon-blue), var(--neon-pink));

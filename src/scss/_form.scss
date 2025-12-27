@@ -1,85 +1,229 @@
-#newOrder {
+/* Секция формы заказа */
+.orderSection {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 70px 2rem;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: var(--bg-secondary);
+  border: 2px solid var(--neon-blue);
+  border-radius: 8px;
+  padding: 40px;
+  box-shadow: var(--shadow);
+}
+
+.contact-form h3 {
+  color: var(--neon-pink);
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  text-align: center;
+    border-bottom: 1px solid var(--neon-blue);
+}
+
+.contact-form > p {
+  text-align: center;
+  color: var(--text-secondary);
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 12px 15px;
+  background: var(--bg-primary);
+  border: 2px solid rgba(187, 134, 252, 0.3);
+  border-radius: 4px;
+  color: var(--text-primary);
+  font-size: 16px;
+  font-family: 'AnonymousPro', monospace;
+  transition: all 0.3s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.6;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--neon-blue);
+  box-shadow: 0 0 0 3px rgba(187, 134, 252, 0.1);
+}
+
+.form-group select {
+  cursor: pointer;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.submit-btn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 15px;
+  background-color: var(--bg-secondary);
+  border: 2px solid var(--neon-blue);
+  color: var(--text-primary);
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow);
+  border-radius: 4px;
+}
+
+
+.submit-btn:hover {
+  color: var(--neon-pink);
+  border-color: var(--neon-pink);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+}
+/* Модальные окна */
+.modal {
   display: none;
   position: fixed;
-  top: 50px;
-  left: 50%;
-  transform: translateX(-50%);
-  margin: 0 auto;
-  max-width: fit-content;
-  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  z-index: 2000;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
-#thanks {
-  display: none;
+
+.modal-content {
+  position: relative;
+  max-width: 600px;
+  width: 100%;
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .close-btn {
   position: absolute;
   right: 20px;
-  top: 10px;
+  top: 15px;
   font-size: 32px;
-  cursor: pointer
-}
-
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0 auto;
-  background: var(--bg-secondary);
-  padding: 2rem;
-  box-shadow: var(--shadow);
-}
-
-.contact-form p {
-  margin-bottom: 1.5rem;
-}
-.form-group {
-  margin-bottom: 1.5rem;
-  width: 100%;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 5px;
   color: var(--text-primary);
-  font-weight: bold;
-}
-
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 5px;
-  border: 1px solid  var(--color-text-primary);
-  font-size: 18px;
+  cursor: pointer;
+  z-index: 10;
   transition: all 0.3s ease;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
 }
 
-.form-group input:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: var(--color-text-primary);
-  box-shadow: var(--shadow-hover);
-}
-.form-group select {
-  font-size: 18px;
-  padding: 5px;
-}
-
-.submit-btn {
-  margin-top: 7%;
-  padding: 2%;
-  background-color: var(--bg-secondary);
-  border: 1px solid;
-  border-color: var(--text-primary);
-  font-size: 16px;
-  transition: all 0.3s ease;
-  box-shadow: var(--shadow);
-}
-
-.submit-btn:hover {
+.close-btn:hover {
   color: var(--neon-pink);
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-hover);
+  background: rgba(255, 138, 128, 0.1);
+  transform: rotate(90deg);
 }
 
+/* Модальное окно благодарности */
+.thanks-modal {
+  background: var(--bg-secondary);
+  border: 2px solid var(--neon-pink);
+  border-radius: 8px;
+  padding: 60px 40px;
+  box-shadow: 0 20px 60px rgba(255, 138, 128, 0.3);
+  text-align: center;
+}
 
+.goodRequest h3 {
+  color: var(--neon-pink);
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.goodRequest p {
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .services {
+    padding: 40px 1rem;
+  }
+
+  .orderSection {
+    padding: 40px 1rem;
+  }
+
+  .headSkills h2 {
+    font-size: 24px;
+  }
+
+  .lineSection {
+    width: 100px;
+  }
+
+  .servicesGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .pricingGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .pricingCard.featured {
+    transform: scale(1);
+  }
+
+  .contact-form {
+    padding: 30px 20px;
+  }
+
+  .contact-form h3 {
+    font-size: 1.5rem;
+  }
+
+  .thanks-modal {
+    padding: 40px 25px;
+  }
+
+  .goodRequest h3 {
+    font-size: 1.5rem;
+  }
+}

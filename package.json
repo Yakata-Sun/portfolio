@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "gitadd": "git add . && git commit -m 'update' && git push"
+    "gitadd": "git add . && git commit -m 'update' && git push",
+    "prettify": "prettier --log-level warn --cache --write {src/**/*,*}.{ts,tsx,js,jsx,json,yml,scss} !/{node_modules,dist}/**/*"
   },
   "devDependencies": {
     "sass": "^1.89.2",
@@ -15,6 +16,7 @@
     "vite-plugin-html": "^3.2.2"
   },
   "dependencies": {
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "prettier": "^3.7.4"
   }
 }

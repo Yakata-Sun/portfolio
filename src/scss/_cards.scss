@@ -1,0 +1,156 @@
+.card {
+  border: 2px solid var(--neon-blue);
+  border-radius: 8px;
+  padding: 1.2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.2rem;
+  z-index: 10;
+}
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--neon-pink);
+}
+.card.featured {
+  border-color: var(--neon-pink);
+  border-width: 3px;
+  transform: scale(1.02);
+}
+
+.card h3,
+.card h2 {
+  font-size: 1.5rem;
+  color: var(--neon-pink);
+  margin-bottom: 15px;
+  border-bottom: 1px solid var(--neon-blue);
+}
+
+.card .price {
+  font-size: 2rem;
+  color: var(--neon-blue);
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+.card ul {
+  text-align: left;
+  margin: 1rem 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.card li {
+  margin: 10px 0;
+  padding-left: 1.3rem;
+  position: relative;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.card li:before {
+  position: absolute;
+  left: 0;
+  color: var(--neon-blue);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.card .duration {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-top: 15px;
+}
+
+.card .stack,
+.card h2,
+.card p,
+.card .links {
+  padding: 0 10px;
+}
+.card p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+.card .links {
+  display: flex;
+  justify-content: space-between;
+}
+.card img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  -webkit-animation: projectImgScroll 0.8s ease;
+  animation: projectImgScroll 0.8s ease;
+  filter: grayscale(80%);
+  transition: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transition-duration: 0.8s;
+}
+.card img:hover {
+  filter: none;
+}
+
+.tooltip,
+.cardSkils {
+  background-color: var(--bg-primary);
+  max-width: 280px;
+  box-shadow: var(--neon-shadow);
+}
+.tooltip h3,
+.cardSkils h2 {
+  font-size: 1.1rem;
+  padding-bottom: 8px;
+}
+
+.tooltip li,
+.cardSkils li {
+  margin: 6px 0;
+  padding-left: 15px;
+}
+.tooltip li:before,
+.cardSkils li:before {
+  content: '▹';
+font-size: 0.9rem;
+}
+.tooltip {
+  position: absolute;
+  opacity: 0;
+}
+
+.tooltip.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+.cardSkils {
+  width: 180px;
+}
+.serviceCard {
+  background: var(--bg-secondary);
+  padding: 25px;
+  gap: 15px;
+  box-shadow:  var(--neon-shadow);
+}
+.serviceCard:hover {
+  transform: translateY(-5px);
+}
+.serviceCard h3 {
+  padding-bottom: 10px;
+}
+.serviceCard li:before {
+  content: '✓';
+}
+@media (max-width: 768px) {
+  .card.featured {
+    transform: scale(1);
+  }
+   .tooltip {
+    max-width: 200px;
+    font-size: 0.85rem;
+  }
+}

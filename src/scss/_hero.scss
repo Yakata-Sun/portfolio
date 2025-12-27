@@ -1,4 +1,4 @@
-.hero{
+.hero {
   min-height: 70vh;
   padding: 5rem 2rem;
   max-width: 1200px;
@@ -6,20 +6,20 @@
   padding-bottom: 0;
 }
 .media {
-    position: absolute;
-    left: 30px;
-    top: calc(2.5rem + 50px);
-    z-index: 1;
-    display: flex;
-    flex-direction: column; 
-    align-items: center; 
-    gap: 15px;
+  position: absolute;
+  left: 30px;
+  top: calc(2.5rem + 50px);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
 }
 .media-line {
-    width: 2px;
-    height: 150px;
-    background: var(--text-primary);
-    margin-bottom: 10px; 
+  width: 2px;
+  height: 150px;
+  background: var(--neon-blue);
+  margin-bottom: 10px;
 }
 .media-icons {
   transition: all 0.3s ease;
@@ -30,9 +30,8 @@
   box-shadow: 0 3px 10px var(--color-text-primary);
 }
 @media (max-width: 978px) {
-  .media{
+  .media {
     left: 15px;
-    background-color: var(--bg-primary);
   }
 }
 canvas {
@@ -40,7 +39,7 @@ canvas {
   top: 0;
   left: 0;
   z-index: -1; /* Устанавливаем канвас на задний план */
-  }
+}
 .content {
   position: relative;
   z-index: 1; /* Содержимое будет выше канваса */
@@ -48,13 +47,13 @@ canvas {
   grid-template-columns: repeat(2, 1fr);
   padding-top: calc(2.5rem + 50px); /* Отступ сверху для текста */
   row-gap: 110px;
-        }
+}
 .hero-descr {
   justify-self: start;
   align-self: center;
 }
 .hero-descr h1,
- .hero-descr p{
+.hero-descr p {
   color: #333333;
 }
 
@@ -70,11 +69,11 @@ canvas {
 }
 
 .hero-btn:hover {
-  color: var(--neon-blue);
+  color: var(--neon-pink);
   transform: translateY(-3px);
   box-shadow: var(--shadow-hover);
 }
-.hero-image{
+.hero-image {
   justify-self: end;
   display: flex;
   flex-direction: column;
@@ -85,23 +84,23 @@ canvas {
   align-self: flex-end;
 }
 
-.citata { 
-  margin-top: 4rem; 
+.citata {
+  margin-top: 4rem;
   display: flex;
-flex-direction: column;  
- justify-content: center;
-padding: 4rem 0;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem 0;
   font-size: 22px;
   line-height: 30px;
-  background: var(--bg-primary)
+  background: var(--bg-primary);
 }
 .hero-name {
   display: flex;
-flex-direction: column;  
- justify-content: center;
+  flex-direction: column;
+  justify-content: center;
   position: relative;
   margin: 0 auto;
-   width: fit-content;
+  width: fit-content;
   margin-bottom: 0; /* Отступ от других элементов */
 }
 
@@ -110,7 +109,7 @@ flex-direction: column;
   margin: 0;
   font-size: 20px;
   line-height: 30px;
-  padding: 15px; 
+  padding: 15px;
   border: 1px solid;
   border-color: var(--text-primary); /* Стиль рамки */
 }
@@ -139,11 +138,16 @@ flex-direction: column;
   border: 1px solid;
   border-top: none;
   border-color: var(--text-primary); /* Стиль рамки */
-  padding: 2%;; /* Отступ от текста до рамки */
+  padding: 2%; /* Отступ от текста до рамки */
   margin: 0; /* Отступ от других элементов */
 }
+@media (max-width: 1300px) {
+  .hero-descr {
+    margin: 4rem;
+  }
+}
 @media (max-width: 850px) {
-  .content{
+  .content {
     display: flex;
     flex-direction: column;
   }

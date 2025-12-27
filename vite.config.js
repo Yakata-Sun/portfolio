@@ -3,10 +3,10 @@ import { createHtmlPlugin } from 'vite-plugin-html';
 
 export default defineConfig({
   build: {
-    minify: true
+    minify: true,
   },
   css: {
-    minify: true
+    minify: true,
   },
   plugins: [
     createHtmlPlugin({
@@ -19,5 +19,5 @@ export default defineConfig({
       },
     }),
   ],
-  assetFileNames: `assets/[name].min.[ext]`
-})  
+  assetFileNames: `assets/[name].min.[ext]`,
+});

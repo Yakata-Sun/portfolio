@@ -24,12 +24,6 @@
         <li><a href="#services"><span>#</span>Услуги</a></li>
         <li><a href="#about"><span>#</span>О себе</a></li>
         <li><a href="#contact"><span>#</span>Контакты</a></li>
-        <li class="theme-switch-wrapper">
-          <label class="theme-switch">
-            <input type="checkbox" id="theme-toggle">
-            <span class="slider"></span>
-          </label>
-        </li>
       </ul>
     </div>
   </nav>
@@ -54,81 +48,75 @@
       </div>
     </div>
   </section>
-          <section class="citata">
-        <div class="hero-name">
-          <p class="quote-text">
-            Некоторые вещи <span class="blue">лучше выглядят сделанными</span>, чем описанными.
-          </p>
-          <p class="quote-name">Дэвид Томас</p>
-        </div>
-        
-      </section>
+  <section class="citata">
+    <div class="hero-name">
+      <p class="quote-text">
+        Некоторые вещи <span class="pink">лучше выглядят сделанными</span>, чем описанными.
+      </p>
+      <p class="quote-name">Дэвид Томас</p>
+    </div>
+
+  </section>
   <section class="skills">
     <div class="headSkills">
       <h2><span class="blue">#</span> Мои компетенции</h2>
       <div class="lineSection"></div>
     </div>
-<div class="skillsDiagram">
-  <!-- Tooltip -->
-  <div class="tooltip" id="tooltip">
-    <h3 id="tooltipTitle"></h3>
-    <ul id="tooltipList"></ul>
-  </div>
+    <div class="skillsDiagram">
+      <!-- Tooltip -->
+      <div class="tooltip card" id="tooltip">
+        <h3 id="tooltipTitle"></h3>
+        <ul id="tooltipList"></ul>
+      </div>
 
-  <!-- Центральная "Full Stack" метка -->
-  <div class="radial-center">
-    <span>Full Stack</span>
-    <span>Developer</span>
-  </div>
+      <!-- Центральная "Full Stack" метка -->
+      <div class="radial-center">
+        <span>Frontend</span>
+        <span>Разработчик</span>
+      </div>
 
-  <!-- Круговая диаграмма: 6 секторов -->
-  <div class="radial-diagram">
-    <!-- Frontend -->
-    <div class="radial-sector sector-1"
-         data-title="Frontend"
-         data-skills="JavaScript ES6+, React.js, HTML5, CSS3, SCSS/SASS/Less, Bootstrap, jQuery">
-      <span>Frontend</span>
+      <!-- Круговая диаграмма: 6 секторов -->
+      <div class="radial-diagram">
+        <!-- Frontend -->
+        <div class="radial-sector sector-1" data-title="Frontend"
+          data-skills="JavaScript ES6+, React.js, HTML5, CSS3, SCSS/SASS/Less, Bootstrap, jQuery">
+          <span>Frontend</span>
+        </div>
+
+        <!-- Инструменты -->
+        <div class="radial-sector sector-2" data-title="Инструменты"
+          data-skills="VS Code, Vite, Gulp, Git, Open Server">
+          <span>Инструменты</span>
+        </div>
+
+        <!-- Нейросети -->
+        <div class="radial-sector sector-3" data-title="Нейросети"
+          data-skills="ChatGPT, Claude, Qwen, Gemini, MidJourney, Ideogram">
+          <span>Нейросети</span>
+        </div>
+
+        <!-- SEO -->
+        <div class="radial-sector sector-4" data-title="SEO"
+          data-skills="Google Tools, Google Analytics, Google Trends, Yandex.Wordstat, Яндекс.Директ">
+          <span>SEO</span>
+        </div>
+
+        <!-- CMS -->
+        <div class="radial-sector sector-5" data-title="CMS"
+          data-skills="WordPress, Elementor, Gravity Forms, WooCommerce, Интеграция с WP">
+          <span>CMS</span>
+        </div>
+
+        <!-- Backend / Tools -->
+        <div class="radial-sector sector-6" data-title="Дизайн"
+          data-skills="Figma, Photoshop, Gimp">
+          <span>Дизайн</span>
+        </div>
+      </div>
     </div>
-
-    <!-- Инструменты -->
-    <div class="radial-sector sector-2"
-         data-title="Инструменты"
-         data-skills="VS Code, Vite, Gulp, GitHub, Open Server">
-      <span>Инструменты</span>
-    </div>
-
-    <!-- Нейросети -->
-    <div class="radial-sector sector-3"
-         data-title="Нейросети"
-         data-skills="ChatGPT, Claude, Qwen, Gemini, MidJourney, Ideogram">
-      <span>Нейросети</span>
-    </div>
-
-    <!-- SEO -->
-    <div class="radial-sector sector-4"
-         data-title="SEO"
-         data-skills="Google Tools, Google Analytics, Google Trends, Yandex.Wordstat, Яндекс.Директ">
-      <span>SEO</span>
-    </div>
-
-    <!-- CMS -->
-    <div class="radial-sector sector-5"
-         data-title="CMS"
-         data-skills="WordPress, Elementor, Gravity Forms, WooCommerce, Интеграция с WP">
-      <span>CMS</span>
-    </div>
-
-    <!-- Backend / Tools -->
-    <div class="radial-sector sector-6"
-         data-title="Backend / Tools"
-         data-skills="Node.js, Express, MongoDB, Git, Docker, REST API">
-      <span>Tools</span>
-    </div>
-  </div>
-</div>
     <div class="typeSkills">
-      <div class="cardSkilsRow">
-        <div class="cardSkils">
+
+        <div class="card cardSkils">
           <h2>Инструменты Web-разработки</h2>
           <ul>
             <li>VS Code</li>
@@ -136,28 +124,53 @@
             <li>Gulp</li>
             <li>GitHub</li>
             <li>Open Server</li>
-</ul>
+          </ul>
         </div>
 
-      </div>
-      <div class="cardSkilsRow">
-        <div class="cardSkils">
+
+        <div class="card cardSkils">
           <h2>Frontend-разработка</h2>
-          <p>Javascript ES6+ / React.js / Canvas / HTML5 / CSS3 / SCSS-SASS-Less / Bootstrap / jQuery </p>
+          <ul>
+            <li>Javascript ES6+</li>
+            <li>React.js</li>
+            <li>Canvas</li>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>SCSS-SASS-Less</li>
+            <li>Bootstrap</li>
+            <li>jQuery</li>
+          </ul>
         </div>
-        <div class="cardSkils">
+        <div class="card cardSkils">
           <h2>Нейросети</h2>
-          <p>ChatGPT / Claude / Qwen / Gemini / MidJourney / Ideogram и другие</p>
+          <ul>
+            <li>ChatGPT</li>
+            <li>Claude</li>
+            <li>Qwen</li>
+            <li>Gemini</li>
+            <li>MidJourney</li>
+            <li>Ideogram и другие</li>
+          </ul>
         </div>
-      </div>
-      <div class="cardSkilsRow">
-        <div class="cardSkils">
+
+        <div class="card cardSkils">
           <h2>CMS-разработка</h2>
-          <p>WordPress / Elementor / Gravity Forms / WooCommerce / Интеграция вашего сайта с WordPress</p>
+          <ul>
+            <li>WordPress</li>
+            <li>Elementor</li>
+            <li>WooCommerce</li>
+            <li>Интеграция вашего сайта с WordPress</li>
+          </ul>
         </div>
-        <div class="cardSkils">
+        <div class="card cardSkils">
           <h2>SEO-аналитика и маркетинг</h2>
-          <p>Google Tools / Google Analytics / Google Trends / Yandex.Wordstat / Яндекс.Директ</p>
+          <ul>
+            <li>Google Tools</li>
+            <li>Google Analytics</li>
+            <li>Google Trends</li>
+            <li>Yandex.Wordstat</li>
+            <li>Яндекс.Директ</li>
+          </ul>
         </div>
       </div>
   </section>
@@ -166,7 +179,7 @@
       <h2><span class="blue">#</span> Мои проекты</h2>
       <div class="lineSection"></div>
     </div>
-<!--     <div class="moreProject">
+    <!--     <div class="moreProject">
       <div class="lineMore"></div>
       <input type="checkbox" id="moreWatch">
       <label for="moreWatch" class="more">
@@ -202,109 +215,323 @@
       </label>
     </div> -->
     <div class="cardProjects">
-      <div class="card">
-        <img src="./public/images/novosvobodnayaScreen.png" alt="">
+      <div class="card pricingCard">
         <div class="stack">HTML, SASS, Javascript, PHP</div>
-        <h2>Многостраничный сайт</h2>
+        <img src="./public/images/nvsb.png" alt="">
+        
+        <h3>Многостраничный сайт</h3>
         <p>Каталоги товаров и услуг, информационный блог, обратная связь</p>
         <div class="links">
           <a href="https://novosvobodnaya.ru/" class="button">Посмотреть</a>
           <a href="" class="button">GitHub</a>
         </div>
       </div>
-      <div class="card">
-        <img src="" alt="">
+      <div class="card pricingCard">
         <div class="stack">Javascript ES6+</div>
+        <img src="./public/images/uiHover.png" alt="">
         <h2>UI библиотека на нативном JS</h2>
         <p>Все необходимые компоненты для интерактивного сайта</p>
         <a href="" class="button">GitHub</a>
       </div>
-      <div class="card">
+      <div class="card  pricingCard">
         <img src="" alt="">
         <div class="stack">React.js</div>
-          <h2>Сервис для транспонирования мелодий</h2>
-          <p>Смена тональности мелодии с объяснением, а после авторизации с сохранением</p>
+        <h2>Сервис для транспонирования мелодий</h2>
+        <p>Смена тональности мелодии с объяснением, а после авторизации с сохранением</p>
         <a href="" class="button">Посмотреть</a>
         <a href="" class="button">GitHub</a>
       </div>
     </div>
   </section>
-  <section>
-    <form class="contact-form" method="post" enctype="multipart/form-data" id="formOrder">
-      <h3>Оставьте заявку</h3>
-      <p>Если есть предпочтительный вид связи, напишите его в сообщении.<br>
-        Я выйду на связь в ближайшее время.</p>
-      <div class="form-group">
-        <label for="name">Имя</label>
-        <input type="text" id="name" name="name" required>
-      </div>
-      <div class="form-group">
-        <label for="phone">Телефон</label>
-        <input type="tel" id="phone" name="phone" required>
-      </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
-      </div>
-      <div class="form-group">
-        <label for="typeProject">Тип проекта</label>
-        <select id="typeProject" name="typeProject">
-          <option value="landing">Сайт-визитка, лэндинг</option>
-          <option value="website">Многостраничный сайт - продажа услуг, блог</option>
-          <option value="onlineShop">Интернет-магазин</option>
-          <option value="webapp">Веб-приложение</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="message">Описание проекта</label>
-        <textarea id="message" name="message" rows="5" placeholder="Если хотите, оставьте пустым это поле"></textarea>
-      </div>
-      <button type="submit" class="submit-btn" id="btnOrder">Отправить заявку</button>
-    </form>
-    </div>
-  </section>
+   <section class="services" id="services">
+        <!-- Заголовок секции -->
+        <div class="headSkills">
+            <h2><span class="blue">#</span> Мои услуги</h2>
+            <div class="lineSection"></div>
+        </div>
 
-  <div class="modal" id="newOrder">
-    <div class="close-btn">&times;</div>
-    <form class="contact-form" method="post" enctype="multipart/form-data" id="formOrder">
-      <h3>Оставьте заявку</h3>
-      <p>Если есть предпочтительный вид связи, напишите его в сообщении.<br>
-        Я выйду на связь в ближайшее время.</p>
-      <div class="form-group">
-        <label for="name">Имя</label>
-        <input type="text" id="name" name="name" required>
-      </div>
-      <div class="form-group">
-        <label for="phone">Телефон</label>
-        <input type="tel" id="phone" name="phone" required>
-      </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
-      </div>
-      <div class="form-group">
-        <label for="typeProject">Тип проекта</label>
-        <select id="typeProject" name="typeProject">
-          <option value="landing">Сайт-визитка, лэндинг</option>
-          <option value="website">Многостраничный сайт - продажа услуг, блог</option>
-          <option value="onlineShop">Интернет-магазин</option>
-          <option value="webapp">Веб-приложение</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="message">Описание проекта</label>
-        <textarea id="message" name="message" rows="5" placeholder="Если хотите, оставьте пустым это поле"></textarea>
-      </div>
-      <button type="submit" class="submit-btn" id="btnOrder">Отправить заявку</button>
-    </form>
-  </div>
-  <div class="modal" id="thanks">
-    <div class="close-btn">&times;</div>
-    <div class="goodRequest">
-      <h3>Благодарю за заявку</h3>
-      <p>В ближайшее время с вами свяжусь</p>
+        <!-- Сетка услуг -->
+        <div class="servicesGrid">
+            <!-- Услуга 1 -->
+              <div class="card serviceCard">
+                <h3>Landing Page под ключ</h3>
+                <p>Полный цикл: от дизайна в Figma до готовой продающей страницы</p>
+                <ul>
+                    <li>Web-дизайн в Figma</li>
+                    <li>Адаптивная верстка</li>
+                    <li>Анимации и эффекты</li>
+                    <li>Форма обратной связи</li>
+                    <li>SEO-оптимизация</li>
+                </ul>
+                <div class="servicePrice">от 20 000 ₽</div>
+            </div>
+
+            <!-- Услуга 2 -->
+             <div class="card serviceCard">
+                <h3>Верстка сайтов</h3>
+                <p>Превращу ваш дизайн в живой, адаптивный сайт с чистым кодом</p>
+                <ul>
+                    <li>Pixel-perfect верстка по макетам Figma</li>
+                    <li>Адаптив для всех устройств</li>
+                    <li>Кроссбраузерность</li>
+                    <li>Семантичный HTML5</li>
+                    <li>Оптимизация производительности</li>
+                </ul>
+                <div class="servicePrice">от 10 000 ₽</div>
+            </div>
+            
+            <!-- Услуга 3 -->
+           <div class="card serviceCard">
+                <h3>React-разработка</h3>
+                <p>Создам интерактивное веб-приложение с современной архитектурой</p>
+                <ul>
+                    <li>Одностраничные приложения (SPA)</li>
+                    <li>Компонентная архитектура</li>
+                    <li>Интеграция с API</li>
+                    <li>Личные кабинеты</li>
+                    <li>Динамические интерфейсы</li>
+                </ul>
+                <div class="servicePrice">от 25 000 ₽</div>
+            </div>
+
+
+            <!-- Услуга 4 -->
+            <div class="card serviceCard">
+                <h3>WordPress разработка</h3>
+                <p>Создание и настройка сайтов на WordPress с индивидуальным дизайном</p>
+                <ul>
+                    <li>Установка и настройка WordPress</li>
+                    <li>Кастомизация тем</li>
+                    <li>Интеграция плагинов</li>
+                    <li>WooCommerce магазины</li>
+                    <li>Миграция сайтов</li>
+                </ul>
+                <div class="servicePrice">от 20 000 ₽</div>
+            </div>
+
+            <!-- Услуга 5 -->
+            <div class="card serviceCard">
+                <h3>Поддержка и доработка</h3>
+                <p>Техническая поддержка и развитие вашего проекта</p>
+                <ul>
+                    <li>Исправление ошибок</li>
+                    <li>Добавление функционала</li>
+                    <li>Оптимизация скорости</li>
+                    <li>Обновление библиотек</li>
+                    <li>Консультации</li>
+                </ul>
+                <div class="servicePrice">от 1 000 ₽/час</div>
+            </div>
+
+            <!-- Услуга 6 -->
+            <div class="card serviceCard">
+                <h3>SEO и аналитика</h3>
+                <p>Настройка аналитики и базовая SEO-оптимизация сайта</p>
+                <ul>
+                    <li>Google Analytics</li>
+                    <li>Яндекс.Метрика</li>
+                    <li>SEO-разметка</li>
+                    <li>Оптимизация Core Web Vitals</li>
+                    <li>Анализ конкурентов</li>
+                    <li>Настройка и запуск рекламных кабинетов Яндекс.Директ и VK Реклама</li>
+                </ul>
+                <div class="servicePrice">от 5 000 ₽</div>
+            </div>
+        </div>
+
+        <!-- Тарифные пакеты -->
+        <div class="pricingSection">
+            <h2><span class="pink">Тарифные пакеты</span> — готовые решения</h2>
+            
+            <div class="pricingGrid">
+                <!-- Базовый -->
+                <div class="card pricingCard">
+                    <h3>📦 Базовый</h3>
+                    <div class="price">от 10 000 ₽</div>
+                    <ul>
+                        <li>Landing page (до 5 экранов)</li>
+                        <li>Адаптивная верстка</li>
+                        <li>Базовая анимация</li>
+                        <li>Форма обратной связи</li>
+                    </ul>
+                    <div class="duration">Срок: 3-5 дней</div>
+                    <button class="orderBtn">Заказать</button>
+                </div>
+
+                <div class="card pricingCard">
+                    <h3>📦 Базовый расширенный</h3>
+                    <div class="price">от 15 000 ₽</div>
+                    <ul>
+                      <li>Web-дизайн в Figma</li>
+                        <li>Landing page (до 5 экранов)</li>
+                        <li>Адаптивная верстка</li>
+                        <li>SEO-оптимизация</li>
+                        <li>Анимации</li>
+                        <li>Форма обратной связи</li>
+                    </ul>
+                    <div class="duration">Срок: 3-5 дней</div>
+                    <button class="orderBtn">Заказать</button>
+                </div>
+
+
+                <!-- Стандарт -->
+                <div class="pricingCard featured">
+                    <h3>📦 Стандарт</h3>
+                    <div class="price">от 25 000 ₽</div>
+                    <ul>
+                        <li>Многостраничный сайт (до 5 страниц)</li>
+                        <li>React-компоненты</li>
+                        <li>Интеграция с API</li>
+                        <li>Продвинутые анимации</li>
+                    </ul>
+                    <div class="duration">Срок: 7-10 дней</div>
+                    <button class="orderBtn">Заказать</button>
+                </div>
+
+                <!-- Премиум -->
+                <div class="pricingCard">
+                    <h3>📦 Премиум</h3>
+                    <div class="price">от 50 000 ₽</div>
+                    <ul>
+                        <li>Веб-приложение на React</li>
+                        <li>Дизайн в Figma</li>
+                        <li>Сложная логика</li>
+                        <li>Интеграция с CMS</li>
+                        <li>Техподдержка 1 месяц</li>
+                    </ul>
+                    <div class="duration">Срок: от 2 недель</div>
+                    <button class="orderBtn">Заказать</button>
+                </div>
+
+                <!-- Индивидуальный -->
+                <div class="pricingCard">
+                    <h3>📦 Индивидуальный</h3>
+                    <div class="price">по запросу</div>
+                    <ul>
+                        <li>Уникальное решение</li>
+                        <li>Полный цикл разработки</li>
+                        <li>Любой функционал</li>
+                        <li>Долгосрочная поддержка</li>
+                        <li>Консультации и обучение</li>
+                    </ul>
+                    <div class="duration">Срок: обсуждается</div>
+                    <button class="orderBtn">Обсудить</button>
+                </div>
+            </div>
+        </div>
+    </section>
+     <section class="orderSection">
+        <div class="headSkills">
+            <h2><span class="blue">#</span> Контакты</h2>
+            <div class="lineSection"></div>
+        </div>
+
+        <form class="contact-form" method="post" enctype="multipart/form-data" id="formOrder">
+            <h3>Оставьте заявку</h3>
+            <p>Если есть предпочтительный вид связи, напишите его в сообщении.<br>
+                Я выйду на связь в ближайшее время.</p>
+            
+            <div class="form-group">
+                <label for="name">Имя *</label>
+                <input type="text" id="name" name="name" placeholder="Ваше имя" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Телефон *</label>
+                <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="typeProject">Тип проекта</label>
+                <select id="typeProject" name="typeProject">
+                    <option value="landing">Сайт-визитка, лэндинг</option>
+                    <option value="website">Многостраничный сайт - продажа услуг, блог</option>
+                    <option value="onlineShop">Интернет-магазин</option>
+                    <option value="webapp">Веб-приложение</option>
+                    <option value="wordpress">WordPress сайт</option>
+                    <option value="support">Поддержка и доработка</option>
+                    <option value="other">Другое</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Описание проекта</label>
+                <textarea id="message" name="message" rows="5" placeholder="Расскажите о вашем проекте (необязательно)"></textarea>
+            </div>
+            
+            <button type="submit" class="submit-btn" id="btnOrder">Отправить заявку</button>
+        </form>
+    </section>
+   <footer class="footer-v1">
+    <div class="footer-line"></div>
+    <div class="footer-content">
+        <p>© 2025 Мария Яката. Все права защищены</p>
+        <div class="footer-links">
+            <a href=""><img src="./public/images/icons/github.png" alt="GitHub"></a>
+            <a href=""><img src="./public/images/icons/telegram.png" alt="Telegram"></a>
+        </div>
     </div>
-  </div>
+</footer>
+    <div class="modal" id="newOrder">
+        <div class="modal-content">
+            <div class="close-btn" id="closeModal">&times;</div>
+            <form class="contact-form" method="post" enctype="multipart/form-data">
+                <h3>Быстрая заявка</h3>
+                <p>Заполните форму и я свяжусь с вами в ближайшее время</p>
+                
+                <div class="form-group">
+                    <label for="modalName">Имя *</label>
+                    <input type="text" id="modalName" name="name" placeholder="Ваше имя" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="modalPhone">Телефон *</label>
+                    <input type="tel" id="modalPhone" name="phone" placeholder="+7 (___) ___-__-__" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="modalEmail">Email *</label>
+                    <input type="email" id="modalEmail" name="email" placeholder="your@email.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="modalTypeProject">Тип проекта</label>
+                    <select id="modalTypeProject" name="typeProject">
+                        <option value="landing">Сайт-визитка, лэндинг</option>
+                        <option value="website">Многостраничный сайт</option>
+                        <option value="onlineShop">Интернет-магазин</option>
+                        <option value="webapp">Веб-приложение</option>
+                        <option value="wordpress">WordPress сайт</option>
+                        <option value="support">Поддержка и доработка</option>
+                        <option value="other">Другое</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="modalMessage">Описание проекта</label>
+                    <textarea id="modalMessage" name="message" rows="4" placeholder="Кратко опишите задачу"></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Отправить</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Модальное окно благодарности -->
+    <div class="modal" id="thanks">
+        <div class="modal-content thanks-modal">
+            <div class="close-btn" id="closeThanks">&times;</div>
+            <div class="goodRequest">
+                <h3>✓ Благодарю за заявку!</h3>
+                <p>Ваше сообщение получено.<br>Я свяжусь с вами в ближайшее время.</p>
+            </div>
+        </div>
+    </div>
   <script type="module" src="/src/js/main.js"></script>
 </body>
 
