@@ -11,15 +11,18 @@ export function backgroundCanvas() {
 
   // Инициализация канваса и переменных
   function init() {
+    const section = document.getElementById('hero');
+    const rect = section.getBoundingClientRect();
     // Установка размеров канваса
     canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+   canvas.height = rect.height;
 
     // Расчёт количества колонок
     columns = Math.floor(canvas.width / fontSize);
     // Инициализация массива капель
     drops = Array(columns).fill(1);
   }
+ 
 
   // Обновление и отрисовка каждого кадра
   function draw() {

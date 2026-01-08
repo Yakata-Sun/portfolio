@@ -46,9 +46,7 @@ h3 {
 p {
   font-size: 16px;
 }
-button {
-  color: var(--text-primary);
-}
+
 .pink {
   color: var(--neon-pink);
 }
@@ -61,10 +59,13 @@ button {
   height: 2px;
   width: 300px;
   background-color: var(--neon-blue);
+  margin: auto 0;
 }
 
 section {
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 70px 2rem;
 }
 
 a {
@@ -72,4 +73,43 @@ a {
 }
 ul {
   list-style: none;
+}
+.btn,
+.orderBtn {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--neon-blue);
+  color: var(--text-primary);
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow);
+  border-radius: 4px;
+    padding: 12px 30px;
+}
+.orderBtn {
+  margin-top: 25px;
+}
+
+.btn:hover,
+.orderBtn:hover {
+  color: var(--neon-pink);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--neon-pink);
+}
+
+@media (max-width: 768px) {
+  .lineSection {
+    width: 100px;
+  }
+  h1{
+    font-size: 20px;
+  }
+  h2,
+  h3 {
+    font-size: 18px;
+  }
+  p {
+  font-size: 14px;
+}
 }

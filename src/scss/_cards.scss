@@ -30,9 +30,8 @@
 }
 
 .card .price {
-  font-size: 2rem;
-  color: var(--neon-blue);
-  margin: 20px 0;
+  color: var(--neon-pink);
+  margin: 0 auto;
   font-weight: bold;
 }
 
@@ -114,9 +113,13 @@
   padding-left: 15px;
 }
 .tooltip li:before,
-.cardSkils li:before {
+.cardSkils li:before,
+.pricingCard li:before {
   content: '▹';
 font-size: 0.9rem;
+}
+.serviceCard li:before {
+  content: '✓';
 }
 .tooltip {
   position: absolute;
@@ -142,9 +145,12 @@ font-size: 0.9rem;
 .serviceCard h3 {
   padding-bottom: 10px;
 }
-.serviceCard li:before {
-  content: '✓';
+.pricingCard {
+  background: linear-gradient(135deg, rgba(187, 134, 252, 0.1), rgba(255, 138, 128, 0.1));
+  border: 2px solid var(--neon-blue);
+  box-shadow: var(--shadow);
 }
+
 @media (max-width: 768px) {
   .card.featured {
     transform: scale(1);

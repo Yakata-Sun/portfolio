@@ -82,10 +82,11 @@ canvas {
   display: block;
   max-width: 440px;
   align-self: flex-end;
+  border: none;
 }
 
 .citata {
-  margin-top: 4rem;
+  margin-top: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
