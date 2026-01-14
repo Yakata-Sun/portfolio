@@ -11,7 +11,6 @@ import CircleOfFifths from './components/CircleOfFifths';
 import KeyScoreChart from './components/KeyScoreChart';
 import SidebarActions from './components/SidebarAction';
 
-// ============= MAIN APP COMPONENT =============
 function App() {
   const [inputMelody, setInputMelody] = useState('C4 E4 G4 Bb4');
   const [originalKey, setOriginalKey] = useState(['C', 'major']);
@@ -118,6 +117,12 @@ function App() {
     }
   };
 
+
+  const handleGoHome = () => {
+  // Переход на главную страницу
+  window.location.href = '/';
+};
+
   return (
     <div className="AppModern">
 
@@ -141,7 +146,9 @@ function App() {
           handleDetectKey={handleDetectKey}
           handleTranspose={handleTranspose}
           handlePlayOriginal={handlePlayOriginal}
+          handleGoHome={handleGoHome}
         />
+        
 
         {/* === Main Content === */}
         <main className="main-content">

@@ -1,12 +1,12 @@
 const modal = () => {
-  function openModal(triggerSelector, modalSelector, closeSelector) {
+  function openModal(triggerSelector = '.btn', modalSelector, closeSelector) {
     const triggers = document.querySelectorAll(triggerSelector);
     const modal = document.querySelector(modalSelector);
     const close = document.querySelector(closeSelector);
 
     triggers.forEach((trigger) => {
       trigger.addEventListener('click', () => {
-        modal.style.display = 'block';
+        modal.style.display = 'flex';
         document.body.style.overflow = 'hidden';
       });
     });
@@ -23,7 +23,8 @@ const modal = () => {
       }
     });
   }
-  openModal('.hero-btn', '#newOrder', '.close-btn');
+  openModal('.btnHero', '#newOrder', '.close-btn');
+  openModal('.orderBtn', '#newOrder', '.close-btn');
 };
 
 export default modal;

@@ -43,7 +43,7 @@ const order = () => {
 
       const data = Object.fromEntries(formData);
 
-      if (data.name === '' || data.phone === '' || data.email === '') {
+      if (data.name === '' || data.phone === '') {
         messageStatus.empty;
         return;
       }

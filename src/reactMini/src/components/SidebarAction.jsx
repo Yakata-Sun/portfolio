@@ -10,6 +10,7 @@ const SidebarActions = ({
   handleDetectKey,
   handleTranspose,
   handlePlayOriginal,
+  handleGoHome
   // Дополнительные пропсы при необходимости
 }) => {
   // Динамически обновляем действия с актуальными колбэками и состояниями
@@ -55,7 +56,9 @@ const SidebarActions = ({
 
   return (
     <aside className="sidebar">
-      <div className="sidebar-header">🎛️</div>
+      <div className="sidebar-header">
+        <button className="sidebar-btn" onClick={handleGoHome} title="Вернуться">⤴  </button>
+      </div>
       <nav className="sidebar-nav">
         {actions.map((action, idx) => (
           <button
