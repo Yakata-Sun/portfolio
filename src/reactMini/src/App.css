@@ -270,7 +270,6 @@ body {
   position: relative;
   overflow: hidden;
 }
-
 .detection-card::before {
   content: '';
   position: absolute;
@@ -282,6 +281,42 @@ body {
   background-size: 200% 100%;
   animation: gradientShift 3s ease-in-out infinite;
 }
+
+.detection-card.collapsed {
+  max-height: 80px;        /* Ограничивает высоту карточки */
+  overflow: hidden;        /* Прячет всё, что не помещается */
+  padding: 20px 32px;      /* Уменьшает отступы */
+  cursor: pointer;         /* Показывает, что можно кликнуть */
+}
+.detection-card.collapsed::after {
+  content: '';                    /* Создаёт псевдоэлемент */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;                   /* Высота градиента */
+  background: linear-gradient(    /* Плавный переход от прозрачного к тёмному */
+    to bottom, 
+    transparent, 
+    rgba(15, 23, 42, 0.95)
+  );
+  pointer-events: none;           /* Градиент не блокирует клики */
+}
+.detection-card.collapsed:hover {
+  border-color: rgba(99, 102, 241, 0.5);  /* Подсвечивает границу */
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);  /* Усиливает тень */
+}
+.detection-card h3 .toggle-icon {
+  margin-left: auto;           /* Прижимает к правому краю */
+  transition: transform 0.3s;  /* Плавное вращение */
+  transform: rotate(0deg);     /* Начальное положение: ▼ */
+}
+
+.detection-card.collapsed h3 .toggle-icon {
+  transform: rotate(180deg);   /* В свёрнутом виде: ▲ */
+}
+
+
 
 @keyframes gradientShift {
   0%, 100% {
@@ -570,4 +605,278 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--primary);
   border-radius: 8px;
+}
+/* === RESPONSIVE === */
+@media (max-width: 1024px) {
+  .keys-row,
+  .visualizations-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .main-content {
+    padding: 30px 40px;
+    left: calc(80px + 1rem);
+  }
+
+  .key-selectors {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 60px;
+    padding: 12px 0;
+  }
+
+  .sidebar-header {
+    font-size: 28px;
+    margin-bottom: 24px;
+  }
+
+  .sidebar-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+  }
+
+  .btn-icon {
+    font-size: 20px;
+  }
+
+  .btn-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .main-content {
+    left: 60px;
+    padding: 20px 16px;
+    width: calc(100% - 60px);
+  }
+
+  .app-header {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+
+  .app-header h1 {
+    font-size: 24px;
+  }
+
+  .header-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .input-section,
+  .result-section {
+    padding: 16px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+  }
+
+  .form-row {
+    margin-bottom: 20px;
+  }
+
+  .form-row label {
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+
+  .input-melody {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .keys-row {
+    gap: 16px;
+  }
+
+  .key-selectors {
+    gap: 8px;
+  }
+
+  .key-selectors select {
+    padding: 8px;
+    font-size: 13px;
+  }
+
+  .detection-card {
+    padding: 20px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+  }
+
+  .detection-card h3 {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+
+  .detection-card p {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  .confidence {
+    display: block;
+    margin-left: 0;
+    margin-top: 8px;
+    width: fit-content;
+  }
+
+  .explanation {
+    padding: 12px 16px;
+    font-size: 13px;
+    margin: 12px 0;
+  }
+
+  .btn-use-key {
+    padding: 12px 20px;
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .visualizations-grid {
+    gap: 16px;
+    margin: 16px 0;
+  }
+
+  .viz-card {
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .viz-card h4 {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  .alternatives {
+    margin-top: 16px;
+    padding-top: 16px;
+  }
+
+  .alternatives h4 {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .alternatives li {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  .output-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .output-header h3 {
+    font-size: 18px;
+  }
+
+  .btn-play-result {
+    padding: 10px 16px;
+    font-size: 14px;
+    width: 100%;
+  }
+
+  .output-box {
+    padding: 12px;
+  }
+
+  .output-box code {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .app-footer {
+    margin-top: 24px;
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .app-footer p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .no-key {
+    font-size: 14px;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    width: 50px;
+    padding: 10px 0;
+  }
+
+  .sidebar-header {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .sidebar-nav {
+    gap: 12px;
+  }
+
+  .sidebar-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+  }
+
+  .btn-icon {
+    font-size: 18px;
+  }
+
+  .btn-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .main-content {
+    left: 50px;
+    padding: 16px 12px;
+    width: calc(100% - 50px);
+  }
+
+  .app-header h1 {
+    font-size: 20px;
+  }
+
+  .input-section,
+  .result-section {
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  .detection-card {
+    padding: 16px;
+  }
+
+  .detection-card h3 {
+    font-size: 18px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .visualizations-grid {
+    gap: 12px;
+  }
+
+  .viz-card {
+    padding: 12px;
+  }
+
+  .app-footer {
+    padding: 12px;
+  }
 }

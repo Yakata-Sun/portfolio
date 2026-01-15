@@ -20,11 +20,12 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        page: resolve(__dirname, '../src/reactMini/index.html')
+        reactMini: resolve(__dirname, './src/reactMini/index.html'), 
       },
       output: {
         entryFileNames: '[name].js',
-        chunkFileNames: 'chunks/[name].js'
+        chunkFileNames: 'chunks/[name].js',
+        assetFileNames: 'assets/[name].min.[ext]', // Переместил сюда
       },
     },
     minify: true,
@@ -32,6 +33,4 @@ export default defineConfig({
   css: {
     minify: true,
   },
-  
-  assetFileNames: `assets/[name].min.[ext]`,
 });

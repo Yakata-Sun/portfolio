@@ -20,6 +20,7 @@ function App() {
   const [midiFile, setMidiFile] = useState(null);
   const [detectedData, setDetectedData] = useState(null);
   const { playMelody } = useAudioContext();
+  const [isCollapsed, setIsCollapsed] = useState(false);
 
   const playNoteString = (noteString) => {
     const midiNumbers = parseNotesToMidi(noteString);
@@ -221,8 +222,16 @@ function App() {
           {/* Detection & Result Section */}
           <section className="result-section">
             {detectedData && (
-              <div className="detection-card">
-                <h3>🔍 Анализ тональности</h3>
+              <div className={`detection-card ${isCollapsed ? 'collapsed' : ''}`} 
+     onClick={() => isCollapsed && setIsCollapsed(false)}>
+  <h3>
+    🔍 Анализ тональности
+    <span className="toggle-icon" 
+          onClick={(e) => { e.stopPropagation(); setIsCollapsed(!isCollapsed); }}>
+      ▼
+    </span>
+  </h3>
+
                 {detectedData.best ? (
                   <>
                     <p>
